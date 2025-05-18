@@ -1,0 +1,185 @@
+:root {
+  --red: #b30000;
+  --skin: #fcd5b5;
+  --black: #1a1a1a;
+  --gold: #ffcc00;
+  --white: #fff;
+  --mouth: #a0522d;
+}
+
+.matador-canvas {
+  margin: 0;
+  position: relative;
+  top: 30px;
+}
+
+.matador-head {
+  width: 30px;
+  height: 30px;
+  background: var(--skin);
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.matador-eye {
+  width: 4px;
+  height: 4px;
+  background: var(--black);
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+}
+
+.matador-eye.left {
+  left: 7px;
+}
+
+.matador-eye.right {
+  right: 7px;
+}
+
+.matador-nose {
+  width: 2px;
+  height: 6px;
+  background: var(--black);
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.matador-mouth {
+  width: 10px;
+  height: 2px;
+  background: var(--mouth);
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+.matador-torso {
+  width: 40px;
+  height: 60px;
+  background: var(--black);
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid var(--gold);
+  border-radius: 5px;
+}
+
+.matador-arm {
+  width: 10px;
+  height: 40px;
+  background: var(--black);
+  position: absolute;
+  top: 30px;
+  border-radius: 5px;
+  transform-origin: top center;
+  animation: arm-sway 2s ease-in-out infinite;
+}
+
+.matador-arm.left {
+  left: calc(50% - 30px);
+  transform: rotate(20deg);
+}
+
+.matador-arm.right {
+  right: calc(50% - 35px);
+  transform: rotate(-20deg);
+}
+
+@keyframes arm-sway {
+  0%,
+  100% {
+    transform: rotate(20deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+.matador-cape {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 80px;
+  background: var(--red);
+  z-index: 1;
+  animation: cape-wave 2s ease-in-out infinite;
+}
+
+@keyframes cape-wave {
+  0%,
+  100% {
+    transform: translateX(calc(-67%)) rotate(10deg);
+    border-radius: 0 50% 50% 0 / 0 100% 100% 0;
+  }
+
+  50% {
+    transform: translateX(-57%) rotate(0deg);
+    border-radius: 50% 0 0 50% / 100% 0 0 100%;
+  }
+}
+@keyframes blink {
+  0%,
+  90%,
+  100% {
+    height: 4px;
+  }
+  95% {
+    height: 0px;
+  }
+}
+
+@keyframes smile {
+  0%,
+  100% {
+    width: 10px;
+  }
+  50% {
+    width: 14px;
+  }
+}
+
+.matador-eye {
+  animation: blink 5s infinite;
+}
+
+.matador-mouth {
+  animation: smile 3s ease-in-out infinite;
+}
+.matador-hat {
+  width: 30px;
+  height: 10px;
+  background: var(--black);
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px 10px 0 0;
+  border: 2px solid var(--gold);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.matador-hat-brim {
+  width: 70px;
+  height: 5px;
+  background: var(--black);
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+}

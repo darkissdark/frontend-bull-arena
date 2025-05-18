@@ -7,11 +7,11 @@
 }
 :root {
   --black: #141416;
-  --pink: #E9BAA7;
+  --pink: #e9baa7;
 }
 
-body{
-  background: #05935F;
+body {
+  background: #05935f;
 }
 
 .App {
@@ -77,7 +77,7 @@ h1 {
 }
 
 .duel .matador {
-  width: 300px;
+  /* width: 300px; */
   display: flex;
   align-items: center;
   justify-content: center;
